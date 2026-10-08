@@ -1,0 +1,343 @@
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.tagline {
+    margin: 10px auto 30px;
+    max-width: 650px;
+    font-size: 18px;
+    color: #e0e7ff;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+    padding: 60px 0;
+}
+
+section h2 {
+    margin: 0 0 35px;
+    text-align: center;
+    font-size: 32px;
+    color: #1e3a8a;
+}
+
+
+/* =========================================
+   TUTOR LISTINGS
+========================================= */
+
+.tutors-section {
+    padding-bottom: 30px;
+}
+
+.tutor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tutor-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tutor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.tutor-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.tutor-card h3 {
+    margin: 0 0 8px;
+    font-size: 23px;
+    color: #2563eb;
+}
+
+.tutor-card p {
+    margin: 10px 0;
+}
+
+.subject {
+    font-weight: bold;
+    color: #4b5563;
+}
+
+.rate {
+    font-weight: bold;
+    color: #16a34a;
+    font-size: 18px;
+}
+
+
+/* =========================================
+   BOOKING SECTION
+========================================= */
+
+.booking-section {
+    margin-top: 60px;
+    background-color: white;
+    padding: 45px 0;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f8fafc;
+    padding: 35px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   FORM LABELS
+========================================= */
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #374151;
+}
+
+
+/* =========================================
+   FORM INPUTS
+========================================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 16px;
+    color: #1f2937;
+    background-color: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+button {
+    width: 100%;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 7px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+button:focus {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background-color: #111827;
+    color: #d1d5db;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer p {
+    margin: 6px 0;
+}
+
+footer a {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+
+    .tutor-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+    }
+
+    header {
+        padding: 40px 0;
+    }
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    nav a {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    main {
+        padding: 40px 0;
+    }
+
+    section h2 {
+        font-size: 27px;
+    }
+
+    .tutor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tutor-card {
+        padding: 25px;
+    }
+
+    form {
+        padding: 25px 20px;
+    }
+}
