@@ -341,3 +341,25 @@ footer a:hover {
         padding: 25px 20px;
     }
 }
+
+/* Tutor introduction video */
+.tutor-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+    border-radius: 10px;
+    background-color: #111827;
+}
+
+.tutor-card h4 {
+    margin-bottom: 8px;
+    color: #1e3a8a;
+    font-size: 18px;
+}
+
+.media-caption {
+    color: #4b5563;
+    font-size: 14px;
+    margin-top: 10px;
+}
