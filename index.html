@@ -13,22 +13,19 @@
 
     <!-- Header -->
     <header>
-        <div class="container">
-            <h1>PeerLearn</h1>
+    <div class="container">
+        <h1>PeerLearn</h1>
+        <p class="tagline">Learn together. Grow together.</p>
 
-            <p class="tagline">
-                Learn from peers who recently mastered the subjects you want to learn.
-            </p>
-
-            <!-- Navigation -->
-            <nav aria-label="Main navigation">
-                <a href="#tutors">Find Tutors</a>
-                <a href="#booking">Book a Session</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="tutor.html">Tutor Profile</a>
+            <a href="become-a-tutor.html">Become a Tutor</a>
+            <a href="index.html#tutors">Find Tutors</a>
+            <a href="index.html#booking">Book a Session</a>
+        </nav>
+    </div>
+</header>
 
     <!-- Main Content -->
     <main>
@@ -42,24 +39,44 @@
                 <div class="tutor-grid">
 
                     <!-- Tutor 1 -->
-                    <article class="tutor-card">
-                        <div class="tutor-icon">📐</div>
+                     
+<article class="tutor-card">
+    <div class="tutor-icon" aria-hidden="true">📐</div>
 
-                        <h3>Arjun Sharma</h3>
+    <h3>Arjun Sharma</h3>
 
-                        <p class="subject">
-                            Mathematics
-                        </p>
+    <p class="subject">Mathematics</p>
 
-                        <p>
-                            I help students understand algebra, calculus,
-                            geometry, and difficult problem-solving concepts.
-                        </p>
+    <p>
+        I help students understand algebra, calculus,
+        geometry, and difficult problem-solving concepts.
+    </p>
 
-                        <p class="rate">
-                            ₹300 / hour
-                        </p>
-                    </article>
+    <p class="rate">₹300 / hour</p>
+
+    <h4>Meet Your Tutor</h4>
+
+    <video
+        class="tutor-video"
+        controls
+        preload="metadata"
+        width="100%"
+        aria-label="Arjun Sharma introduces himself as a Mathematics tutor"
+    >
+        <source src="media/tutor-intro.mp4" type="video/mp4">
+        Sorry, your browser does not support HTML video.
+    </video>
+
+    <p class="media-caption">
+        Watch Arjun's introduction before booking a session.
+    </p>
+
+    <a class="profile-link" href="tutor.html">
+        View Full Profile
+    </a>
+</article>
+
+                    
 
 
                     <!-- Tutor 2 -->

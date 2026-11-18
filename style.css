@@ -1,3 +1,4 @@
+
 /* =========================================
    GLOBAL STYLES
 ========================================= */
@@ -16,14 +17,19 @@ body {
     background-color: #f5f7fb;
     color: #1f2937;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
-    width: 90%;
-    max-width: 1100px;
+    width: min(90%, 1100px);
     margin: 0 auto;
 }
 
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
 
 /* =========================================
    HEADER
@@ -38,7 +44,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 48px;
+    font-size: clamp(32px, 5vw, 48px);
     font-weight: 700;
 }
 
@@ -49,16 +55,15 @@ header h1 {
     color: #e0e7ff;
 }
 
-
 /* =========================================
-   NAVIGATION
+   NAVIGATION - FLEXBOX
 ========================================= */
 
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
@@ -66,7 +71,7 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    padding: 10px 18px;
+    padding: 10px 16px;
     border-radius: 8px;
     transition: background-color 0.2s ease;
 }
@@ -75,7 +80,6 @@ nav a:hover,
 nav a:focus {
     background-color: rgba(255, 255, 255, 0.18);
 }
-
 
 /* =========================================
    MAIN
@@ -88,13 +92,12 @@ main {
 section h2 {
     margin: 0 0 35px;
     text-align: center;
-    font-size: 32px;
+    font-size: clamp(25px, 4vw, 32px);
     color: #1e3a8a;
 }
 
-
 /* =========================================
-   TUTOR LISTINGS
+   TUTOR LISTINGS - CSS GRID
 ========================================= */
 
 .tutors-section {
@@ -103,17 +106,19 @@ section h2 {
 
 .tutor-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
 }
 
 .tutor-card {
+    min-width: 0;
     background-color: white;
     padding: 30px;
     border-radius: 14px;
     border: 1px solid #e5e7eb;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow-wrap: anywhere;
 }
 
 .tutor-card:hover {
@@ -147,6 +152,47 @@ section h2 {
     font-size: 18px;
 }
 
+/* =========================================
+   TUTOR VIDEO
+========================================= */
+
+.tutor-video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 12px;
+    border-radius: 10px;
+    background-color: #111827;
+}
+
+.tutor-card h4 {
+    margin-bottom: 8px;
+    color: #1e3a8a;
+    font-size: 18px;
+}
+
+.media-caption {
+    color: #4b5563;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.profile-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 7px;
+}
+
+.profile-link:hover,
+.profile-link:focus {
+    background-color: #1d4ed8;
+}
 
 /* =========================================
    BOOKING SECTION
@@ -161,6 +207,7 @@ section h2 {
 }
 
 form {
+    width: 100%;
     max-width: 700px;
     margin: 0 auto;
     background-color: #f8fafc;
@@ -173,11 +220,6 @@ form {
     margin-bottom: 22px;
 }
 
-
-/* =========================================
-   FORM LABELS
-========================================= */
-
 label {
     display: block;
     margin-bottom: 7px;
@@ -185,15 +227,13 @@ label {
     color: #374151;
 }
 
-
-/* =========================================
-   FORM INPUTS
-========================================= */
-
 input,
 select,
 textarea {
+    display: block;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     padding: 12px 14px;
     font-family: inherit;
     font-size: 16px;
@@ -201,12 +241,6 @@ textarea {
     background-color: white;
     border: 1px solid #cbd5e1;
     border-radius: 7px;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-input::placeholder,
-textarea::placeholder {
-    color: #94a3b8;
 }
 
 input:focus,
@@ -222,6 +256,10 @@ textarea {
     min-height: 120px;
 }
 
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
 
 /* =========================================
    SUBMIT BUTTON
@@ -237,7 +275,6 @@ button {
     font-size: 17px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
 button:hover {
@@ -249,16 +286,15 @@ button:focus {
     outline-offset: 2px;
 }
 
-
 /* =========================================
    FOOTER
 ========================================= */
 
 footer {
     background-color: #111827;
-    color: #d1d5db;
+    color: white;
     text-align: center;
-    padding: 30px 0;
+    padding: 30px 15px;
 }
 
 footer p {
@@ -268,31 +304,99 @@ footer p {
 footer a {
     color: #93c5fd;
     text-decoration: none;
+    overflow-wrap: anywhere;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
-
 /* =========================================
-   RESPONSIVE DESIGN
+   OTHER PAGES
 ========================================= */
 
-/* Tablets */
+.profile-section,
+.registration-section {
+    padding: 45px 0;
+}
+
+.profile-card {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.profile-card h3 {
+    margin-top: 24px;
+    color: #1e3a8a;
+}
+
+.profile-card h3:first-of-type {
+    margin-top: 0;
+}
+
+.profile-card ul,
+.registration-section ul {
+    padding-left: 25px;
+}
+
+.profile-card li,
+.registration-section li {
+    margin-bottom: 8px;
+}
+
+.section-intro {
+    max-width: 750px;
+    margin: 0 auto 25px;
+    text-align: center;
+}
+
+.registration-section > .container > h3,
+.registration-section > .container > ul {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registration-section > .container > h3 {
+    color: #1e3a8a;
+}
+
+.registration-section form {
+    margin-top: 25px;
+}
+
+/* =========================================
+   TABLET - 768px
+========================================= */
+
 @media (max-width: 900px) {
 
-    .tutor-grid {
-        grid-template-columns: 1fr 1fr;
+    .container {
+        width: 92%;
     }
 
-    header h1 {
-        font-size: 40px;
+    .tutor-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    header {
+        padding: 40px 0;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    .tutor-card {
+        padding: 25px;
     }
 }
 
+/* =========================================
+   MOBILE - 600px
+========================================= */
 
-/* Mobile */
 @media (max-width: 600px) {
 
     .container {
@@ -300,7 +404,7 @@ footer a:hover {
     }
 
     header {
-        padding: 40px 0;
+        padding: 35px 0;
     }
 
     header h1 {
@@ -309,16 +413,20 @@ footer a:hover {
 
     .tagline {
         font-size: 16px;
+        margin-bottom: 20px;
     }
 
     nav {
         flex-direction: column;
+        align-items: stretch;
         gap: 5px;
     }
 
     nav a {
         width: 100%;
-        max-width: 250px;
+        max-width: 280px;
+        margin: 0 auto;
+        padding: 9px;
     }
 
     main {
@@ -326,18 +434,85 @@ footer a:hover {
     }
 
     section h2 {
-        font-size: 27px;
+        font-size: 26px;
+        margin-bottom: 25px;
     }
 
     .tutor-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
     }
 
     .tutor-card {
-        padding: 25px;
+        padding: 22px;
+    }
+
+    .tutor-card h3 {
+        font-size: 21px;
+    }
+
+    .booking-section {
+        margin-top: 35px;
+        padding: 35px 0;
     }
 
     form {
-        padding: 25px 20px;
+        padding: 22px 18px;
     }
+
+    .profile-section,
+    .registration-section {
+        padding: 30px 0;
+    }
+
+    .profile-card {
+        width: 100%;
+    }
+
+    .profile-card ul,
+    .registration-section ul {
+        padding-left: 20px;
+    }
+
+    footer {
+        padding: 25px 12px;
+    }
+}
+
+/* =========================================
+   SMALL PHONES - 375px AND BELOW
+========================================= */
+
+@media (max-width: 375px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .tutor-card {
+        padding: 18px;
+    }
+
+    form {
+        padding: 18px 14px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .profile-link {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* =========================================
+   KEYBOARD ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
 }
